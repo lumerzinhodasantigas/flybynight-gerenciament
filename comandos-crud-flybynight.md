@@ -82,6 +82,29 @@ UPDATE lojas_produtos SET estoque = 7
 WHERE loja_id = 4 and produto_id = 1;
 ```
 
+## Excluindo registros
+
+```sql
+DELETE FROM produtos WHERE id = 4;
+```
+
+## Realizando consultas para a visualização de dados
+
+```sql
+-- Contando quantos registros existem na tabela produtos
+-- O * representa todas as linhas/registros
+SELECT COUNT(*) FROM produtos;
+
+-- Exibir apenas o nome, preço e quantidade dos produtos
+SELECT nome, preco, quantidade FROM produtos
+WHERE preco > 1000;
+
+-- Exibit somente o nome e a descrição dos produtos do
+-- Fornecedor Livraria Demais da Conta
+SELECT nome, descricao FROM produtos
+WHERE fornecedor_id = 4;
+```
+
 ```sql
 
 ```
