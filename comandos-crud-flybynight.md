@@ -103,6 +103,23 @@ WHERE preco > 1000;
 -- Fornecedor Livraria Demais da Conta
 SELECT nome, descricao FROM produtos
 WHERE fornecedor_id = 4;
+
+-- Versão 2: usamos uma junção de tabelas (produtos e fornecedores)
+-- O objetivo é conseguir trazer/exibir TAMBÉM o nome do FORNECEDOR
+SELECT
+-- nome das colunas/campos precedidos do nome das tabelas correspondentes
+    produtos.nome,
+    produtos.descricao,
+    fornecedores.nome
+
+-- indicando as tabelas que serão "juntadas/combinadas/relacionadas"
+FROM produtos JOIN fornecedores
+
+-- Regra de junção baseada nas chaves (estrangeira e primária)
+ON produtos.fornecedor_id = fornecedores.id
+
+-- Condição pra essa consulta (produtos do fornecedor Livraria)
+WHERE produtos.fornecedor_id = 4; -- Ou fornecedor.id = 4
 ```
 
 ```sql
