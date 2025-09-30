@@ -9,14 +9,12 @@ function buscarFornecedores($conexao){
     // Montamos o comando SQL para a consulta
     $sql = "SELECT * FROM fornecedores";
 
-    // Executamos o cinabdi e gyardamos o resultado da consulta
+    // Executamos o comando e guardamos o resultado da consulta
     $consulta = $conexao->query($sql);
 
     // Retornamos o resultado em formato de Array Associativo
     return $consulta->fetchAll();
 
 }
-
-
 
 ?>
