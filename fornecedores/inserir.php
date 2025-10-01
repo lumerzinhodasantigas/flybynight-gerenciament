@@ -10,7 +10,7 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' ){
     inserirFornecedor($conexao, $nome);
 
     // Redirecionamos para a página listar.php
-    header("location:listar.php");
+    header("location:lista.php");
     exit;
 }
 ?>

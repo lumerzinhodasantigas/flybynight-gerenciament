@@ -41,7 +41,7 @@ echo "</pre>"; */
             <td> <?=$fornecedor['nome']?> </td>
             <td>
                 <a href="editar.php?id=<?=$fornecedor['id']?>">Editar</a>
-                <a href="excluir.php?id=<?=$fornecedor['id']?>">Excluir</a>
+                <a class="excluir" href="excluir.php?id=<?=$fornecedor['id']?>">Excluir</a>
             </td>
         </tr>
 
@@ -49,5 +49,7 @@ echo "</pre>"; */
 
     </table>
 
+
+    <script src="../js/confirmar-exclusao.js"></script>
 </body>
 </html>
