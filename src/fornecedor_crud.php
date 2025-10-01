@@ -46,6 +46,6 @@ function buscarFornecedorPorId($conexao, $id){
     $consulta->execute();
 
     // retorna o resutlado da consulta como um array (vetor)
-    return $consulta->fecth();
+    return $consulta->fetch();
 }
 ?>
