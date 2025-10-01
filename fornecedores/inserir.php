@@ -16,12 +16,12 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' ){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inserir Fornecedor</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
     <h1>Adicionando um novo fornecedor</h1>
@@ -36,6 +36,6 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' ){
         <button type="submit"> Salvar </button>
     </form>
 
-    <a href="listar.php"> ⬅ Voltar </a>
+    <a href="lista.php"> ⬅ Voltar </a>
 </body>
 </html>

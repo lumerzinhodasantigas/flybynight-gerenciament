@@ -21,7 +21,7 @@ echo "</pre>"; */
 <body>
 
     <h1>Fornecedores</h1>
-    <a href=""> Novo fornecedor </a>
+    <a href="inserir.php"> Novo fornecedor </a>
     <a href="../index.php"> ⬅ Voltar </a>
 
     <!-- Estruturando uma tabela HTML para exibir os dados -->
@@ -38,6 +38,10 @@ echo "</pre>"; */
         <tr>
             <td> <?=$fornecedor['id']?> </td>
             <td> <?=$fornecedor['nome']?> </td>
+            <td>
+                <a href="editar.php">Editar</a>
+                <a href="">Excluir</a>
+            </td>
         </tr>
 
     <?php } // ou endforeach; ?>
