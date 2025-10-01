@@ -30,6 +30,7 @@ echo "</pre>"; */
         <tr>
             <td> <strong> ID </strong>  </td>
             <td> <strong> Nome </strong> </td>
+            <td> <strong> Ações </strong> </td>
         </tr>
 
     <!-- As linhas (tr/td) abaixo serão geradas dinamicamente, ou seja, usando um loop (foreach) no array ($fornecedores) -->
@@ -39,7 +40,7 @@ echo "</pre>"; */
             <td> <?=$fornecedor['id']?> </td>
             <td> <?=$fornecedor['nome']?> </td>
             <td>
-                <a href="editar.php">Editar</a>
+                <a href="editar.php?id=<?=$fornecedor['id']?>">Editar</a>
                 <a href="">Excluir</a>
             </td>
         </tr>
