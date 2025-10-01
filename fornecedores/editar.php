@@ -10,6 +10,17 @@ $fornecedor = buscarFornecedorPorId($conexao, $id);
 var_dump($fornecedor);
 echo "</pre>"; */
 
+if( $_SERVER['REQUEST_METHOD'] === 'POST'){
+
+    $nome = $_POST['nome'];
+    atualizarFornecedor($conexao, $nome, $id);
+
+    // Após redirecionar usando header()...
+    header("location:lista.php");
+
+    // ... sempre encerre/interrompa o script (evitando erros)
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
