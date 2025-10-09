@@ -1,17 +1,14 @@
 <?php
 require_once "../src/produto_crud.php";
 $produtos = buscarProdutos($conexao);
-
-/*echo "<pre>";
-var_dump($produtos);
-echo "</pre>";*/
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista Produtos </title>
+    <title>Lista Produtos</title>
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
@@ -24,27 +21,31 @@ echo "</pre>";*/
     <table>
         <caption> Relação de Produtos </caption>
         <tr>
-            <td> <strong> Nome </strong> </td>
-            <td> <strong> Preço </strong> </td>
-            <td> <strong> Quantidade </strong> </td>
-            <td> <strong> Fornecedor </strong> </td>
-            <td> <strong> Ações </strong> </td>
+            <th> Nome </th>
+            <th> Preço </th>
+            <th> Quantidade </th>
+            <th> Fornecedor </th>
+            <th> Ações </th>
         </tr>
 
+        <?php foreach($produtos as $produto): ?>
+
         <tr>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
+            <td> <?= htmlspecialchars($produto['nome_produto']) ?> </td>
+            <td> <?= htmlspecialchars($produto['preco']) ?> </td>
+            <td> <?= htmlspecialchars($produto['quantidade']) ?> </td>
+            <td> <?= htmlspecialchars($produto['nome_fornecedor']) ?> </td>
             <td>
-                <a href="editar.php">Editar</a>
-                <a class="excluir" href="excluir.php">Excluir</a>
+                <a href="editar.php?id=<?= urlencode($produto['id']) ?>">Editar</a>
+                <a class="excluir" href="excluir.php?id=<?= urlencode($produto['id']) ?>">Excluir</a>
             </td>
         </tr>
+        
+        <?php endforeach; ?>
 
     </table>
 
-
     <script src="../js/confirmar-exclusao.js"></script>
+
 </body>
 </html>

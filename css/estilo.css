@@ -61,7 +61,7 @@ label {
 
 }
 
-input {
+input, textarea, select{
 
     width: 100%;
     padding: 8px;
