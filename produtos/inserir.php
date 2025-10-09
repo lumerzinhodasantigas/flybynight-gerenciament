@@ -36,6 +36,6 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' ){
         <button type="submit"> Salvar </button>
     </form>
 
-    <a href="lista.php"> ⬅ Voltar </a>
+    <a href="lista2.php"> ⬅ Voltar </a>
 </body>
 </html>
