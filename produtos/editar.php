@@ -37,12 +37,12 @@ $fornecedores = buscarFornecedores($conexao);
 
         <div>
             <label for="preco">Preço:</label>
-            <input <?=$produto['preco']?> type="number" name="preco" id="preco" required min="0" step="0.01">
+            <input value="<?=$produto['preco']?>" type="number" name="preco" id="preco" required min="0" step="0.01">
         </div>
 
         <div>
             <label for="quantidade">Quantidade:</label>
-            <input <?=$produto['quantidade']?> type="number" name="quantidade" id="quantidade" required min="0" step="0.01">
+            <input value="<?=$produto['quantidade']?>" type="number" name="quantidade" id="quantidade" required min="0" step="0.01">
         </div>
 
         <div>
