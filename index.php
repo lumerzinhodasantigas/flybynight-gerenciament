@@ -12,6 +12,7 @@
         <ul>
             <li> <a href="fornecedores/lista.php"> Fornecedores </a></li>
             <li> <a href="produtos/lista2.php"> Produtos </a></li>
+            <li> <a href="lojas/listar.php"> Lojas </a></li>
         </ul>
 </body>
 </html>
