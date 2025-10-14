@@ -31,13 +31,13 @@ $produtos = buscarProdutos($conexao);
         <?php foreach($produtos as $produto): ?>
 
         <tr>
-            <td> <?= htmlspecialchars($produto['nome_produto']) ?> </td>
-            <td> <?= htmlspecialchars($produto['preco']) ?> </td>
-            <td> <?= htmlspecialchars($produto['quantidade']) ?> </td>
-            <td> <?= htmlspecialchars($produto['nome_fornecedor']) ?> </td>
+            <td> <?= $produto['nome_produto'] ?> </td>
+            <td> <?= $produto['preco'] ?> </td>
+            <td> <?= $produto['quantidade'] ?> </td>
+            <td> <?= $produto['nome_fornecedor'] ?> </td>
             <td>
-                <a href="editar.php?id=<?= urlencode($produto['id']) ?>">Editar</a>
-                <a class="excluir" href="excluir.php?id=<?= urlencode($produto['id']) ?>">Excluir</a>
+                <a href="editar.php?id=<?=$produto['id']?>">Editar</a>
+                <a class="excluir" href="excluir.php?id=<?=$produto['id']?>">Excluir</a>
             </td>
         </tr>
         
@@ -45,7 +45,6 @@ $produtos = buscarProdutos($conexao);
 
     </table>
 
-    <script src="../js/confirmar-exclusao.js"></script>
 
 </body>
 </html>
