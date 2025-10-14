@@ -3,13 +3,26 @@
 require_once "../src/fornecedor_crud.php";
 require_once "../src/produto_crud.php";
 
-// Estamos pegando o parametro chamado id
+// Estamos pegando  o parametro chamado id
 $id = $_GET['id'];
 
 $produto = buscarProdutosPorID($conexao, $id);
 
 $fornecedores = buscarFornecedores($conexao);
-?>
+
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $nome = $_POST['nome'];
+    $descricao = $_POST['descricao'];
+    $preco = $_POST['preco'];
+    $quantidade = $_POST['quantidade'];
+    $fornecedor_id = $_POST['fornecedor_id'];
+
+    atualizarProduto($conexao, $id, $nome, $descricao, $preco, $quantidade, $fornecedor_id);
+
+    header("location:lista2.php");
+    exit;
+}
+?> 
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -52,7 +65,17 @@ $fornecedores = buscarFornecedores($conexao);
                 <option value="">-- Selecione --</option>
 
                 <?php foreach($fornecedores as $fornecedor): ?>
-                    <option value="<?=$fornecedor['id']?>"><?=$fornecedor['nome']?></option>
+
+                    <!-- Lógica da condicional abaixo é:
+                    Se o ID do fornecedor aqui da lista de opções for IGUAL ao 
+                    forneedor do produto que escolhemos editar, então faça com que fique 
+                    selecionado. Caso contrário, não faça nada -->
+
+                    <option value="<?=$fornecedor['id']?>"
+                    <?=$fornecedor['id'] === $produto['fornecedor_id'] ? 'selected' : '' ?>
+                >
+                    <?=$fornecedor['nome']?>
+                </option>
                 <?php endforeach; ?>
 
             </select>
